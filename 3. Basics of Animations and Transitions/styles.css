@@ -14,7 +14,7 @@
 .todo-0-container .box {
   /* Apply animation here */
   animation-name: grow;
-  animation-duration: 2s;
+  animation-duration: 3s;
   animation-iteration-count: infinite;
   animation-timing-function: linear;
 }
@@ -32,26 +32,57 @@ Set more key frames between 0% and 100%. */
 .todo-1-container .box {
   /* Apply animation here */
   animation: move;
-  animation-duration: 2s;
+  animation-duration: 3s;
   animation-iteration-count: infinite;
 }
 
 @keyframes move {
-  from {
+  0%{
     transform: translateX(0px);
   }
-  to {
+  50% {
     transform: translateX(300px);
+  }
+  100% {
+    transform: translateX(0px);
   }
 }
 
 /* Todo 3.2: Try the different timing funcitons such as linear, ease-in, ease-in-out, cubic-bezier, and steps*/
 .todo-2-container .box {
   /* Apply animation here */
+  animation-timing-function: ease-in-out;
+  animation-name: timing;
+  animation-duration: 3s;
+  animation-iteration-count: infinite;
+}
+@keyframes timing{
+  0%{
+    transform: translateX(0px);
+  }
+  50% {
+    transform: translateX(300px);
+  }
+  100% {
+    transform: translateX(0px);
+  }
 }
 
 /* Todo 3.3: Create a transition that will raise the button up and will make it cast a shadow when you hover over the button */
 /* bonus: apply the transition on the box shadow with different duration and timing function. This should all be in one line*/
 .todo-3-container button {
   /* Apply transition here */
+  border-radius: 8px;
+  margin-bottom: 24px;
+  padding: 10px;
+  transition: transform 300ms ease;
 }
+.todo-3-container button:is(:hover) {
+  transform: scale(1.1);
+  box-shadow: 5px 5px 10px 2px black;
+}
+
+
+
+
+
